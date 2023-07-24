@@ -17,8 +17,8 @@
 
 typedef struct var_cov
 {
-                int *str;
-                int i;
+	int *str;
+	int i;
 } var_cov;
 int print_number(int n);
 int _putchar(char c);
