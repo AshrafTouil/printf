@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * ifElse - A helper function for customPrintf that handles conversions for
+ * t_else_if - A helper function for _printf that handles conversions for
  * characters that follow an else-if statement in the format string
  * @str: A pointer to the format string
  * @i: The current index of the format string
@@ -12,7 +12,7 @@
  * Return: The new length of the string being printed
  */
 
-int	ifElse(const char *str, int i, va_list arg, int len, int tmpi)
+int	t_else_if(const char *str, int i, va_list arg, int len, int tmpi)
 {
 	if (str[i + 1] == 'c')
 		len += _putchar(va_arg(arg, int));
@@ -44,7 +44,7 @@ int	ifElse(const char *str, int i, va_list arg, int len, int tmpi)
 	return (len);
 }
 /**
- * printText - prints a character or string based on the format specifier
+ * t_print - prints a character or string based on the format specifier
  * @str: pointer to the format string
  * @i: current position in the format string
  * @arg: variable argument list
@@ -53,23 +53,23 @@ int	ifElse(const char *str, int i, va_list arg, int len, int tmpi)
  * Return: the updated length of the output
  */
 
-int	printText(const char *str, int i, va_list arg, int len, int tmpi)
+int	t_print(const char *str, int i, va_list arg, int len, int tmpi)
 {
 	if (str[i + 1] == 'r')
 		len += print_reversed_string(va_arg(arg, char *));
 	else if (str[i + 1] == 'p')
 		len += print_pointer(arg, len);
 	else
-			len = ifElse(str, i, arg, len, tmpi);
+			len = t_else_if(str, i, arg, len, tmpi);
 	return (len);
 }
 /**
- * customPrintf - produces output according to a format
+ * _printf - produces output according to a format
  * @format: a string containing zero or more directives
  *
  * Return: the number of characters printed
  */
-int customPrintf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	unsigned int i;
 	unsigned int len;
@@ -97,7 +97,7 @@ int customPrintf(const char *format, ...)
 					if (format[i + 1] != ' ')
 						break;
 				}
-				len = printTextformat, i, arg, len, tmpi);
+				len = t_print(format, i, arg, len, tmpi);
 				i++;
 			}
 			else if (format[i])
