@@ -9,6 +9,7 @@
 #include <string.h>
 #include <assert.h>
 /**
+<<<<<<< HEAD
  * struct var_cov - Custom data type to store binary numbers
  *
  * @str: Integer pointer to an array that stores the binary digits
@@ -19,6 +20,18 @@ typedef struct var_cov
 {
 		int *str;
 		int i;
+=======
+ *  * struct var_cov - Custom data type to store binary numbers
+ *   *
+ *    * @str: Integer pointer to an array that stores the binary digits
+ *     * @i: Integer value indicating the number of binary digits in the array
+ *      */
+
+typedef struct var_cov
+{
+			int *str;
+					int i;
+>>>>>>> 7ae39157bcb70be5ceff299a8a39fd8cc5229749
 } var_cov;
 
 
