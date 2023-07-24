@@ -1,5 +1,4 @@
-#ifndef MAIN_H
-#define MAIN_H
+IN_H
 
 #include <stdio.h>
 #include <unistd.h>
@@ -44,4 +43,4 @@ int print_reversed_string(char *s);
 int print_pointer(va_list arg, int len);
 int	t_else_if(const char *str, int i, va_list arg, int len, int tmpi);
 
-#endif
+#end
