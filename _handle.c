@@ -13,7 +13,7 @@ void process_format_specifier(va_list arg, char specifier, int *printCounter)
 				(*printCounter) += _putchar(va_arg(arg, int));
 				break;
 		case 's':
-				(*printCounter) += put_string(va_arg(arg, char *));
+				(*printCounter) += print_string(va_arg(arg, char *));
 				break;
 		case '%':
 				(*printCounter) += _putchar('%');

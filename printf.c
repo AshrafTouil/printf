@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			handle_format(arg, *format, &counter);
+			process_format_specifier(arg, *format, &counter);
 		}
 		else
 		{

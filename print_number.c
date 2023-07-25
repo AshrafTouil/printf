@@ -11,7 +11,7 @@ int print_number(int n)
 	int numCounter = 0;
 
 	if (n == -2147483648)
-		return (put_string("-2147483648"));
+		return (print_string("-2147483648"));
 	if (n < 0)
 	{
 		_putchar('-');
