@@ -1,16 +1,17 @@
 #include "main.h"
-
 /**
- * custom_printf - produces output according to a format
- * @format: the format string
- * @...: the variable arguments
- * Return: the number of characters printed
+ * _printf - produces output according to a format
+ * @format:
+ * @...:
+ * Return: counter
  */
-int custom_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
-	int char_counter = 0;
-	va_list args;
-	va_start(args, format);
+	int counter = 0;
+	va_list arg;
+
+	va_start(arg, format);
+
 	if (!format || (format[0] == '%' && !format[1]))
 	{
 		return (-1);
@@ -22,17 +23,17 @@ int custom_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-	{
-		format++;
-		handle_custom_format(args, *format, &char_counter);
-	}
+		{
+			format++;
+			handle_format(arg, *format, &counter);
+		}
 		else
-	{
-		_put_custom_char(*format);
-		char_counter++;
-	}
+		{
+			_putchar(*format);
+			counter++;
+		}
 		format++;
 	}
-	va_end(args);
-	return (char_counter);
+	va_end(arg);
+	return (counter);
 }
