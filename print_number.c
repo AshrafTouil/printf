@@ -8,6 +8,7 @@
 
 int print_number(int n)
 {
+<<<<<<< HEAD
 	int numCounter  = 0;
 
 	if (n == -2147483648)
@@ -31,4 +32,29 @@ int print_number(int n)
 		numCounter++;
 	}
 	return (numCounter);
+=======
+        int numCounter  = 0;
+
+        if (n == -2147483648)
+                return (put_string("-2147483648"));
+        if (n < 0)
+        {
+                _putchar('-');
+                n = -n;
+                numCounter ++;
+        }
+
+        if (n < 10)
+        {
+                _putchar('0' + n);
+                numCounter ++;
+        }
+        else
+        {
+                numCounter  += print_number(n / 10);
+                _putchar('0' + n % 10);
+                numCounter++;
+        }
+        return (numCounter );
+>>>>>>> 03788b3d1cb25a607739fc7c370964551237868a
 }
